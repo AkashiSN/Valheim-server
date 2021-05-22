@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  valheim:
+    build:
+      context: .
+    volumes:
+      - ./saves:/root/saves
+    environment:
+      TZ: "Asia/Tokyo"
+      SERVER_NAME: ${SERVER_NAME}
+      WORLD_NAME: ${WORLD_NAME}
+      PASSWORD: ${PASSWORD}
+    ports:
+      - 2456-2458:2456-2458
+      - 2456-2458:2456-2458/udp
+    restart: always
