@@ -13,9 +13,9 @@ RUN apt-get update \
 ADD "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" /tmp/
 RUN tar xf /tmp/steamcmd_linux.tar.gz -C /usr/local/bin
 
-ENV LANG en_US.UTF-8 \
-    LANGUAGE en_US:en \
-    LC_ALL en_US.UTF-8
+ENV LANG=en_US.UTF-8 \
+    LANGUAGE=en_US:en \
+    LC_ALL=en_US.UTF-8
 
 WORKDIR /root/
 

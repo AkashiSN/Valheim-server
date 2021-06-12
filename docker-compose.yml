@@ -2,8 +2,9 @@ version: "3.8"
 
 services:
   valheim:
-    build:
-      context: .
+    image: akashisn/valheim
+    cap_add:
+      - SYS_NICE
     volumes:
       - ./saves:/root/saves
     environment:
