@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  buildx:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -17,18 +17,10 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      - name: Cache Docker layers
-        uses: actions/cache@v2
-        with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-buildx-
-
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          username: akashisn
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push - valheim
@@ -40,5 +32,3 @@ jobs:
             akashisn/valheim
           platforms: linux/amd64
           push: true
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache
