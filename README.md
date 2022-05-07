@@ -11,5 +11,19 @@ PASSWORD=""
 ```
 
 ```bash
-$ docker-compose up -d
+$ docker compose up -d
+```
+
+## Backup
+
+```
+$ docker compose run --rm --entrypoint=backup.sh valheim
+```
+
+## Restore
+
+Restore by running the following before docker compose up.
+
+```
+$ docker compose run --rm --entrypoint=restore.sh valheim ${DATETIME}
 ```

@@ -1,4 +1,7 @@
 #!/bin/sh
+set -eu
+
+cd "/root/Steam/steamapps/common/Valheim dedicated server"
 
 export LD_LIBRARY_PATH=./linux64:$LD_LIBRARY_PATH
 
