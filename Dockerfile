@@ -22,7 +22,7 @@ apt-get install -y \
 add-apt-repository multiverse
 dpkg --add-architecture i386
 apt-get update
-apt-get install -y lib32gcc1 libsdl2-2.0-0:i386
+apt-get install -y lib32gcc-s1 libsdl2-2.0-0:i386
 \
 locale-gen en_US.UTF-8
 \

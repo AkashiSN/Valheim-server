@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 
-cd  /root
+cd /root
 
 steamcmd.sh \
     +login anonymous \
