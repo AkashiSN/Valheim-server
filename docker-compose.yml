@@ -7,6 +7,7 @@ services:
       - SYS_NICE
     volumes:
       - ./saves:/root/saves
+      - /mnt/backup/valheim:/mnt/backup/valheim
     environment:
       TZ: "Asia/Tokyo"
       SERVER_NAME: ${SERVER_NAME}
